@@ -65,15 +65,109 @@ array[0].classList.add("active");
 let active = 0;
 
 const btnPrev = document.querySelector(".my-previous");
-btnPrev.addEventListener("click", function() {
+btnPrev.addEventListener("click", function () {
   array[active].classList.remove("active");
   active = (active === 0) ? array.length - 1 : active - 1;
   array[active].classList.add("active");
 });
 
 const btnNext = document.querySelector(".my-next");
-btnNext.addEventListener("click", function() {
+btnNext.addEventListener("click", function () {
   array[active].classList.remove("active");
   active = (active === array.length - 1) ? 0 : active + 1;
   array[active].classList.add("active");
 });
+
+const scorrimento = setInterval(myFuction, 5000);
+
+function myFuction() {
+  array[active].classList.remove("active");
+  active = (active === array.length - 1) ? 0 : active + 1;
+  array[active].classList.add("active");
+}
+
+const img1 = document.querySelector(".img1");
+const img2 = document.querySelector(".img2");
+const img3 = document.querySelector(".img3");
+const img4 = document.querySelector(".img4");
+const img5 = document.querySelector(".img5");
+
+img1.addEventListener("click", function () {
+  img1.classList.add("active");
+  
+  array[0].classList.add("active");
+
+  array[1].classList.remove("active");
+  array[2].classList.remove("active");
+  array[3].classList.remove("active");
+  array[4].classList.remove("active");
+
+  img2.classList.remove("active");
+  img3.classList.remove("active");
+  img4.classList.remove("active");
+  img5.classList.remove("active");
+})
+
+img2.addEventListener("click", function () {
+  img2.classList.add("active");
+  
+  array[1].classList.add("active");
+
+  array[0].classList.remove("active");
+  array[2].classList.remove("active");
+  array[3].classList.remove("active");
+  array[4].classList.remove("active");
+
+  img1.classList.remove("active");
+  img3.classList.remove("active");
+  img4.classList.remove("active");
+  img5.classList.remove("active");
+})
+
+img3.addEventListener("click", function () {
+  img3.classList.add("active");
+  
+  array[2].classList.add("active");
+
+  array[0].classList.remove("active");
+  array[1].classList.remove("active");
+  array[3].classList.remove("active");
+  array[4].classList.remove("active");
+
+  img1.classList.remove("active");
+  img2.classList.remove("active");
+  img4.classList.remove("active");
+  img5.classList.remove("active");
+})
+
+img4.addEventListener("click", function () {
+  img4.classList.add("active");
+  
+  array[3].classList.add("active");
+
+  array[0].classList.remove("active");
+  array[1].classList.remove("active");
+  array[2].classList.remove("active");
+  array[4].classList.remove("active");
+
+  img1.classList.remove("active");
+  img2.classList.remove("active");
+  img3.classList.remove("active");
+  img5.classList.remove("active");
+})
+
+img5.addEventListener("click", function () {
+  img5.classList.add("active");
+  
+  array[4].classList.add("active");
+
+  array[0].classList.remove("active");
+  array[1].classList.remove("active");
+  array[2].classList.remove("active");
+  array[3].classList.remove("active");
+
+  img1.classList.remove("active");
+  img2.classList.remove("active");
+  img3.classList.remove("active");
+  img4.classList.remove("active");
+})
